@@ -41,9 +41,13 @@ app.use('/api/v1/posts', postRoutes);
 
 app.get('/', (req, res) => {
     res.status(200).json({
-        status: 'success',
+        name: "Taskify API",
+        status: 'Running',
+        version: '1.0.0',
         message: 'Welcome to Taskify API',
-        data: null,
+        description: 'Taskify API is a simple task management API built with Node.js and Express.',
+        timestamp: new Date().toISOString(),
+        uptime: process.uptime(),
     })
 })
 
