@@ -56,7 +56,11 @@ export const verifyEmailController = async (req, res) => {
         }
         user.isVerified = true
         await user.save()
-        await sendWelcomeEmail(user.name, user.email)
+        try {
+            await sendWelcomeEmail(user.name, user.email);
+        } catch (emailError) {
+            console.error('Failed to send welcome email:', emailError);
+        }
         return successResponse(res, "Email verified successfully", 200, {
             userId: user._id,
             name: user.name,
