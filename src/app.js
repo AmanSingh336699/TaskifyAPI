@@ -12,7 +12,6 @@ import healthRoutes from './routes/healthRoutes.js';
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js"
 import sanitizeMiddleware from './middleware/sanatizeMiddleware.js';
 import postRoutes from './routes/postRoutes.js';
-import { protect, restrictTo } from "./middleware/authMiddleware.js"
 
 const app = express()
 app.use(express.json());
