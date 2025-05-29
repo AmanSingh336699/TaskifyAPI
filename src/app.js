@@ -37,7 +37,7 @@ app.use(cors({
 app.use(cookieParser())
 
 // API Documentation
-app.use('/api-docs', protect, restrictTo('admin'), swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Routes
 app.use('/api/v1/auth', authRoutes);
